@@ -214,7 +214,48 @@ ul li::before {
   color: var(--text-muted);
 }
 
+/* ===== ESTILOS E INTERACCIONES JS ===== */
+.js-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
 
+.js-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-category {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+.skill-category::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, 0);
+  left: var(--mouse-x, 0);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle closest-side, rgba(237, 100, 166, 0.15), transparent);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill-category:hover::before {
+  opacity: 1;
+}
 
 footer {
   margin-top: 4rem;
