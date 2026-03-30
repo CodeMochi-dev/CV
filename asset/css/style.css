@@ -1,14 +1,13 @@
 :root {
-  --primary: #2d3748; /* Slate Industrial */
-  --accent: #ed64a6; /* Pastel Pink accent */
-  --accent-soft: #fbb6ce;
-  --secondary: #718096;
-  --bg: #fdfdfd; /* Slightly warm off-white */
+  --primary: #0f172a; /* Slate 900 */
+  --accent: #2563eb; /* Blue 600 */
+  --secondary: #64748b; /* Slate 500 */
+  --bg: #f1f5f9; /* Slate 100 */
   --card-bg: #ffffff;
   --border: #e2e8f0;
-  --text: #1a202c;
-  --text-muted: #4a5568;
-  --spacing: 2rem;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --spacing: 3rem;
 }
 
 * {
@@ -18,30 +17,21 @@
 }
 
 body {
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
   padding: var(--spacing);
-  background-image:
-    radial-gradient(at 0% 0%, hsla(330, 100%, 95%, 1) 0, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(210, 100%, 95%, 1) 0, transparent 50%);
   min-height: 100vh;
 }
 
 .container {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
   background: var(--card-bg);
-  padding: calc(var(--spacing) * 2);
-  border-radius: 24px;
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.05),
-    0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  padding: 4rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -54,8 +44,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 8px;
-  background: linear-gradient(90deg, var(--accent), #6366f1);
+  height: 5px;
+  background: var(--primary);
 }
 
 header {
@@ -94,13 +84,15 @@ header h3 {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: var(--text-muted);
-  transition: color 0.2s;
+  color: var(--secondary);
+  transition: all 0.2s ease;
   justify-content: center;
+  font-weight: 500;
 }
 
 .contact-item:hover {
-  color: var(--accent);
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 .contact-item i {
@@ -109,28 +101,28 @@ header h3 {
 }
 
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   position: relative;
 }
 
 section h2 {
-  font-family: "Outfit", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--primary);
-  border-bottom: 2px solid var(--accent-soft);
-  display: inline-block;
-  padding-bottom: 0.25rem;
-  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  display: block;
+  padding-left: 0.75rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .professional-summary {
   font-size: 1.05rem;
   color: var(--text-muted);
   background: #f8fafc;
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 2rem;
+  border-radius: 8px;
   border-left: 4px solid var(--accent);
 }
 
@@ -148,7 +140,8 @@ section h2 {
   top: 0;
   width: 9px;
   height: 9px;
-  background: var(--accent);
+  background: #fff;
+  border: 2px solid var(--border);
   border-radius: 50%;
 }
 
@@ -245,7 +238,7 @@ ul li::before {
   left: var(--mouse-x, 0);
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle closest-side, rgba(237, 100, 166, 0.15), transparent);
+  background: radial-gradient(circle closest-side, rgba(15, 23, 42, 0.05), transparent);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
@@ -258,11 +251,12 @@ ul li::before {
 }
 
 footer {
-  margin-top: 4rem;
+  margin-top: 6rem;
   text-align: center;
   color: var(--secondary);
-  font-size: 0.8rem;
-  opacity: 0.7;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
 }
 
 @media (max-width: 600px) {
